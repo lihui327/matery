@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/uploads/(.*)",
+      "destination": "/api/proxy"
+    },
+    {
+      "source": "/themes/theme-matery",
+      "destination": "/api/proxy"
+    },
+    {
+      "source": "/source",
+      "destination": "/api/proxy"
+    }
+  ]
+}

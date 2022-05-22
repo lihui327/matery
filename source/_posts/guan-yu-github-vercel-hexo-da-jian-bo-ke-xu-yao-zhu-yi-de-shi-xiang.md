@@ -14,7 +14,7 @@ tags:
 
 #### 初始化
 
-将下载下来的zip解压到你的博客目录，管理员模式下使用power shell进入到该目录，执行以下命令
+将下载下来的zip解压到你的博客目录，管理员模式下使用power shell进入到博客根目录，执行以下命令
 
 `npm install hexo-cli -g`  一般情况下只用执行这一条命令即可
 
@@ -23,6 +23,65 @@ tags:
 #### 修改配置文件
 
 因为官方仓库的配置文件可能有点老了，所以有些没有及时更新，所以需要通过`hexo g`+`hexo s`命令查看期中是否有些命令已弃用，并及时更新成新的配置文件，注意修改站点的网址，一般为https://仓库名.vercel.app
+
+#### 添加插件
+
+官方配置文件默认打开了几个插件，这几个插件是需要手动下载的。管理员模式使用power shell进入到博客根目录
+
+1. 代码高亮
+
+`npm i -S hexo-prism-plugin`
+
+对应的根目录配置文件代码
+
+```yaml
+highlight:
+  enable: false
+
+prism_plugin:
+  mode: 'preprocess'    # realtime/preprocess
+  theme: 'tomorrow'
+  line_number: false    # default false
+  custom_css:
+```
+
+2. 本地搜索
+
+`npm install hexo-generator-search --save`
+
+对应的根目录配置文件代码
+
+```yaml
+search:
+  path: search.xml
+  field: post
+```
+
+3. 中文链接转拼音
+
+`npm i hexo-permalink-pinyin --save`
+
+```yaml
+permalink_pinyin:
+  enable: true
+  separator: '-' # default: '-'
+```
+
+**注意**：每次push仓库时需要将文件名更改为生成的拼音文件名，否则vercel站点部署时找不到对应的页面，即push之前先要hexo g。
+
+4. 文章字数统计插件(可选)
+
+`npm i --save hexo-wordcount`
+
+到主题配置文件里面更改
+
+```yaml
+wordCount:
+  enable: false # 将这个值设置为 true 即可.
+  postWordCount: true
+  min2read: true
+  totalCount: true
+```
 
 #### 创建仓库
 
