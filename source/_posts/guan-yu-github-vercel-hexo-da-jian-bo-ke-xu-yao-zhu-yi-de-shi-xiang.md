@@ -101,9 +101,7 @@ git push --force origin master
 
 1. 进入vercel官网，如下图：
 
-<Image src={'http://photo.lihui327.cn/${blog/2022/2022-05-22_165042.png}'} width={100} height={100} />
-
-![](http://photo.lihui327.cn/blog/2022/2022-05-22_165042.png)
+<img src="http://photo.lihui327.cn/blog/2022/2022-05-22_165042.png" width={100} height={100} />
 
 2. 导入，默认即可，然后等待配置
 
